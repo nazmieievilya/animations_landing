@@ -42,34 +42,31 @@ burgerMenu();
 
 // Swiper
 const swiper = new Swiper(".swiper", {
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-
-  //   // Responsive breakpoints
-  //   breakpoints: {
-  //   // when window width is >= 320px
-  //   320: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 20
-  //   },
-  //   // when window width is >= 480px
-  //   480: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 30
-  //   },
-  // }
 });
+
+const swiperTeam = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 300,
+    modifier: 1,
+    slideShadows: false,
+  },
+});
+swiperTeam.slideTo(1);
+const swiperClients = new Swiper(".clients_swiper", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+swiperClients.slideTo(3);
 
